@@ -3,12 +3,12 @@ const app = express();
 const { Musician } = require("../models/index")
 const { db } = require("../db/connection")
 
-const port = 3000;
+app.use(express.json())
 
 app.get("/Musician", async (req, res) => {
-    const getMusician = await Musician.findAll({})
-    res.json(getMusician)
-})
+    const musicians = await Musician.findAll({});
+    res.json(musicians)
+});
 
 
 
