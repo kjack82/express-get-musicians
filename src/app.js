@@ -5,11 +5,10 @@ const { db } = require("../db/connection")
 
 const port = 3000;
 
-//TODO: Create a GET /musicians route to return all musicians 
-
-
-
-
+app.get("/Musician", async (req, res) => {
+    const getMusician = await Musician.findAll({})
+    res.json(getMusician)
+})
 
 
 
